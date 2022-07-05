@@ -7,8 +7,8 @@
 int main(void)
 {
 int c;
-c = 90;
-while (c <= 115)
+c = 97;
+while (c <= 122)
 putchar (c);
 c++;
 putchar ('\n');
