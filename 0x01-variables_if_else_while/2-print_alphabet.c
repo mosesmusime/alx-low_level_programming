@@ -6,11 +6,14 @@
  */
 int main(void)
 {
-int c;
-c = 97;
-while (c <= 122)
-putchar (c);
-c++;
-putchar ('\n');
-return (0);
+	int i;
+	int lowerCase = 97;
+	int lastCase = 26;
+
+	for (i = 0; i < lastCase; i++)
+	{
+		putchar(lowerCase + i);
+	}
+	putchar('\n');
+	return (0);
 }
