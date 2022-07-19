@@ -2,30 +2,30 @@
 
 /**
  * _strstr - locates a substring
- * @haystack: string where find
- * @needle: sting to find
- * Return: pointer were the string was founded.
+ * @haystack: entire string.
+ * @needle: substring.
+ *
+ * Return: pointer to the beginning of located substring
+ * or NULL if the substring is not found.
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	char *i;
+	char *j;
 
-	if (*needle == 0)
+	while (*haystack != '\0')
 	{
-		return (haystack);
-	}
+		i = haystack;
+		j = needle;
 
-	for (i = 0; haystack[i] != '\0'; i++)
-	{
-	if (needle[0] == haystack[i])
-	{
-	for (j = 1; needle[j] != '\0'; j++)
-	{
-		if (!(needle[j] == haystack[i + j]))
-			break;
-	}
-	return (&haystack[i]);
-	}
+		while (*haystack != '\0' && *j != '\0' && *haystack == *j)
+		{
+			haystack++;
+			j++;
+		}
+		if (!*j)
+			return (i);
+		haystack = i + 1;
 	}
 	return (0);
 }
